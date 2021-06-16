@@ -33,13 +33,20 @@ public class EstateServiceImpl implements EstateService {
 	@Transactional
 	@Override
 	public void deleteEstate(int estateId) {
+		Optional<Estate> estateObj = estateRepository.findById(estateId);
+		if (!estateObj.isPresent()) {
+			throw new EstateNotFoundException(estateId);
+		}
 		estateRepository.deleteById(estateId);
-
 	}
 
 	@Override
 	public void modifyEstate(Estate estate) {
+		Optional<Estate> estateObj = estateRepository.findById(estate.getEstateId());
+		if (!estateObj.isPresent()) {
+			throw new EstateNotFoundException(estate);
 
+		}
 		estateRepository.save(estate);
 	}
 
@@ -59,8 +66,7 @@ public class EstateServiceImpl implements EstateService {
 
 	@Override
 	public List<Estate> fetchEstateByLocation(String estateLocation) {
-		List<Estate> estate = estateRepository.findByEstateLocation(estateLocation);
-
-		return estate;
+	 
+		return estateRepository.findByEstateLocation(estateLocation);
 	}
 }

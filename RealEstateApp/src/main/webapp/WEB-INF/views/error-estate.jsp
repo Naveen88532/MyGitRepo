@@ -4,13 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Saved</title>
+<title>Error</title>
 </head>
 <body>
-<h2>Estate added successfully</h2>
-
-<form action="adminhome">
-<input type="submit" value="back">
-</form>
+	<h2>Reference: ${ref}</h2>
+	<h2>Error Message: ${message}</h2>
 </body>
 </html>

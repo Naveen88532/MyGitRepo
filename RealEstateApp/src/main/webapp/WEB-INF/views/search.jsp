@@ -20,21 +20,21 @@
       function chennai() {
         window.location.href = "chennai";
       }
-      function banglore() {
-        window.location.href = "banglore";
+      function bangalore() {
+        window.location.href = "bangalore";
       }
     </script>
 	<div class="center">
 		<h1>Start your Search by city</h1>
+		
 		<input type="text" autocomplete="off" id="search"
-			onkeyup="myFunction()" placeholder="Search for Cities.."
-			title="Type in a name" />
+			onkeyup="myFunction()" placeholder="Search for Cities.." title="Type in a name" />
 		<ul id="get">
 			<li><a href="hyderabad" onclick="hyderabad()">Hyderabad</a></li>
 			<li><a href="mumbai" onclick="mumbai()">Mumbai</a></li>
 
 			<li><a href="chennai" onclick="chennai()">Chennai</a></li>
-			<li><a href="bangalore" onclick="banglore()">Banglore</a></li>
+			<li><a href="bangalore" onclick="bangalore()">Banglore</a></li>
 		</ul>
 	</div>
 	

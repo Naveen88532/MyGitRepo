@@ -13,43 +13,43 @@
 }
 </style>
 <title>Login Page</title>
+<script type="text/javascript">
+function login()
+{
+	var uname = document.getElementById("email").value;
+	var pwd = document.getElementById("pwd1").value;
+	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if(uname =='')
+	{
+		alert("please enter user name.");
+	}
+	else if(pwd=='')
+	{
+    	alert("enter the password");
+	}
+	else if(!filter.test(uname))
+	{
+		alert("Enter valid email id.");
+	}
+	else if(pwd.length < 4 || pwd.length > 8)
+	{
+		alert("Password min length is 4 and max length is 8.");
+	}
+	else
+	{
+alert('Thank You for Login & You are Redirecting to Real Estate Website');
+//Redirecting to other page or webste code or you can set your own html page.
+   window.location = "adminverify";
+		}
+}
+</script>
 </head>
 <body>
 	<form class="box" action="verifyadmin" id="form" method="post">
 		<h1>Admin Login</h1>
-		<input type="text" placeholder="Username" id="userName" name="userName"/> 
-		<input type="password" placeholder="Password" id="password" name="password"/> 
-		<input type="submit" name="Login" id="submit" value="Login" onclick=validate()/>
+		<input type="text" placeholder="Username" id="email" name="userName"/> 
+		<input type="password" placeholder="Password" id="pwd1" name="password"/> 
+		<input type="submit" name="Login" id="submit" value="Login" onclick=login()/>
 	</form>
 </body>
-<script type="text/javascript">
-function validate(){
-let email = document.getElementById('userName'); 
-let pwd = document.getElementById('password');
-let email_fail document.getElementById('email_fail'); 
-let pwd_fail document.getElementById('pwd_fail');
-let form = document.getElementById('form');
-
-form.addEventListener('submit', function(e)
-if(!email.value.includes ("@"))
-{
-email_fail.innerText= "Enter valid email"; 
-email_fail.style.color="red";
-e.preventDefault();
-}
-else
-email_fail.innerText = "";
-
-if(pwd.value.length === 0 || pwd.value== null)
-{
-pwd_fail.innerText= "password field should not be empty"; 
-pwd_fail.style.color="red";
-e.preventDefault();
-}
- else
-pwd fail.innerText = "";
-
-)}
-}
-</script>
 </html>
