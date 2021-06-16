@@ -6,8 +6,11 @@
 	font-family: Century Gothic;
 }
 
+body{
+background-image: url("../images/cg.jpg");
+}
+ 
 header {
-	background-image: url("../images/cg.jpg");
 	height: 100vh;
 	background-size: cover;
 	background-size:100%

@@ -9,7 +9,6 @@ class RealEstateAppApplicationTests {
 	@Test
 	void contextLoads() {
 		
-		
 	}
 
 }
