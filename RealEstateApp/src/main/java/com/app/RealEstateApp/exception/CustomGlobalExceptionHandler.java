@@ -20,7 +20,7 @@ public class CustomGlobalExceptionHandler {
 	public ModelAndView estateNotFoundException(EstateNotFoundException e) {
 		final ModelAndView modelAndView = new ModelAndView();
 		 modelAndView.addObject("ref", e.getEstateId());
-		 modelAndView.addObject("message", "Estate not existing with id: "+e.getEstateId());
+		 modelAndView.addObject("message",e.getMessage());
 	        modelAndView.setViewName("error-estate");
 	        return modelAndView;
 	}
